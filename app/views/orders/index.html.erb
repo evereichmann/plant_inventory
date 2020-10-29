@@ -23,8 +23,8 @@
         <td><%= order.country_origin %></td>
         <td><%= order.units %></td>
         <td><%= order.total_price %></td>
-        <td><%= order.date_order.month %>/<%= order.date_order.day %>/<%= order.date_order.year %></td>
-        <td><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
+        <td><%= order.date_order %></td>
+        <td><%= order.date_shipped %></td>
         <td><%= order.multiple %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
