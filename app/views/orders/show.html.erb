@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seller name:</strong>
+  <%= @order.seller_name %>
+</p>
+
+<p>
+  <strong>Country origin:</strong>
+  <%= @order.country_origin %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @order.units %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @order.total_price %>
+</p>
+
+<p>
+  <strong>Date order:</strong>
+  <%= @order.date_order.month %>/<%= @order.date_order.day %>/<%= @order.date_order.year %>
+</p>
+
+<p>
+  <strong>Date shipped:</strong>
+  <%= @order.date_shipped == 0 ? "Not Shipped Yet" : @date%>
+  
+</p>
+
+<p>
+  <strong>Multiple:</strong>
+  <%= @order.multiple %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
