@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<div class="ui container">
+<br/>
+<div class="ui raised very padded text container segment">
 <p>
   <strong>Seller name:</strong>
   <%= @order.seller_name %>
@@ -17,7 +18,7 @@
 
 <p>
   <strong>Total price:</strong>
-  <%= @order.total_price %>
+  $<%= @order.total_price %>
 </p>
 
 <p>
@@ -28,7 +29,6 @@
 <p>
   <strong>Date shipped:</strong>
   <%= @order.date_shipped == 0 ? "Not Shipped Yet" : @date%>
-  
 </p>
 
 <p>
@@ -36,5 +36,10 @@
   <%= @order.multiple %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<div class="ui breadcrumb">
+<%= link_to 'Edit', edit_order_path(@order), class:"section"%>
+<div class="divider"> / </div>
+<%= link_to 'Back', orders_path, class:"section" %>
+</div>
+</div>
+</div>

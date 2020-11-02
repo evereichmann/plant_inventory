@@ -1,8 +1,8 @@
+<div class="ui container">
 <p id="notice"><%= notice %></p>
-
 <h1>Orders</h1>
 
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
       <th>Seller name</th>
@@ -22,7 +22,7 @@
         <td><%= order.seller_name %></td>
         <td><%= order.country_origin %></td>
         <td><%= order.units %></td>
-        <td><%= order.total_price %></td>
+        <td>$<%= order.total_price %></td>
         <td><%= order.date_order.month %>/<%= order.date_order.day %>/<%= order.date_order.year %></td>
         <td><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
         <td><%= order.multiple %></td>
@@ -37,3 +37,4 @@
 <br>
 
 <%= link_to 'New Order', new_order_path %>
+</div>
