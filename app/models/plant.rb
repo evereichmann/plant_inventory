@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
+    belongs_to :order
     has_one_attached :avatar
 
     def is_recovered 
