@@ -1,6 +1,5 @@
 <div class="ui container">
 <br/>
-<div class="ui raised very padded text container segment">
 <p>
   <strong>Seller name:</strong>
   <%= @order.seller_name %>
@@ -41,9 +40,21 @@
 <div class="divider"> / </div>
 <%= link_to 'Back', orders_path, class:"section" %>
 </div>
+<br>
+<br>
+<div class="ui three column grid">
+<% @order.plants.each do |plant| %>
+<div class="column">
+<div class="ui card">
+<div class="content">
+<p class="header" ><%= plant.name%></p>
+<p>id:<%= plant.id%></p>
+<p>condition: <%= plant.condition%></p>
+<p>recovered? <%= plant.is_recovered%></p>
 </div>
+</div>
+</div>
+<% end %>
 </div>
 
-<% @order.plants.each do |plant| %>
-<p><%= plant.name%></p><p><%= plant.id%></p>
-<% end %>
+</div>
