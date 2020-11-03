@@ -43,3 +43,7 @@
 </div>
 </div>
 </div>
+
+<% @order.plants.each do |plant| %>
+<p><%= plant.name%></p><p><%= plant.id%></p>
+<% end %>

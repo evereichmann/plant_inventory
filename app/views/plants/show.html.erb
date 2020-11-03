@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Order:</strong>
-  <%= @plant.order_id %>
+  <strong>Seller:</strong>
+  <%=  @plant.order.seller_name %>
 </p>
 
 <p>
@@ -20,6 +20,15 @@
   <%= @plant.arrival_date.month %>/<%= @plant.arrival_date.day %>/<%= @plant.arrival_date.year %>
 </p>
 
+
+<p>
+  <strong>Days In Box:</strong>
+    <% a = Date.parse("#{@plant.order.date_shipped}") %>
+    <% b = Date.parse("#{@plant.arrival_date}") %>
+    <% c = b.mjd - a.mjd %>
+    <%= %"#{c} days" %>
+</p>
+
 <p>
   <strong>Condition:</strong>
   <%= @plant.condition %>
@@ -30,7 +39,7 @@
   <%= @plant.is_recovered%>
 </p>
 
-
+<% if @plant.sold == true %>
 <p>
   <strong>Sold:</strong>
   <%= @plant.sold %>
@@ -40,6 +49,8 @@
   <strong>Price:</strong>
   <%= @plant.price %>
 </p>
+<% else %>
+<% end %>
 
 <% if @plant.avatar.attached?%>
   <img src="<%=(url_for(@plant.avatar))%>">
