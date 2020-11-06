@@ -35,6 +35,15 @@
   <%= @order.multiple %>
 </p>
 
+<strong>Note:</strong>
+<% @order.order_notes.each do |note| %>
+<p><%= note.information %></p>
+<p><%= link_to 'Edit Note', edit_order_note_path(note) %></p>
+<p><%= link_to 'Destroy', order_note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
+
+<p><%= link_to 'Add Note', new_order_note_path %></p>
+
 <div class="ui breadcrumb">
 <%= link_to 'Edit', edit_order_path(@order), class:"section"%>
 <div class="divider"> / </div>
@@ -55,6 +64,7 @@
 <p>id:<%= plant.id%></p>
 <p>condition: <%= plant.condition%></p>
 <p>recovered? <%= plant.recovered? %></p>
+<p>sold? <%= plant.sold %></p>
 </div>
 </div>
 </div>

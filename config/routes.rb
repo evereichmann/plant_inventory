@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :order_notes
   resources :plants
   root to: "pages#home"
   devise_for :users
