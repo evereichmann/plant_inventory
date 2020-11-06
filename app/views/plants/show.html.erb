@@ -36,7 +36,7 @@
 
 <p>
   <strong>Recovery date:</strong>
-  <%= @plant.is_recovered%>
+  <%= @plant.recovered?%>
 </p>
 
 <% if @plant.sold == true %>
@@ -52,9 +52,10 @@
 <% else %>
 <% end %>
 
-<% if @plant.avatar.attached?%>
-  <img src="<%=(url_for(@plant.avatar))%>">
-<% end %>  
+ <% if @plant.avatar.attached? %>
+   <%= image_tag @plant.avatar %>
+<% end %>
+<br/>
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>

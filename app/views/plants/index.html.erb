@@ -23,7 +23,7 @@
         <td>$<%= plant.unit_price %></td>
         <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
         <td><%= plant.condition %></td>
-        <td><%= plant.is_recovered  %></td>
+        <td><%= plant.recovered?  %></td>
         <td><%= link_to 'Show', plant %></td>
         <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
         <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -62,7 +62,7 @@
         <td><%= plant.name %></td>
         <td>$<%= plant.unit_price %></td>
         <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
-        <td><%= plant.is_recovered %></td>
+        <td><%= plant.recovered? %></td>
         <td>$<%= plant.price %></td>
         <% money = plant.price - plant.unit_price %>
         <td>$<%= money %></td>
@@ -98,7 +98,7 @@
         <td><%= plant.name %></td>
         <td>$<%= plant.unit_price %></td>
         <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
-        <td><%= plant.is_recovered %></td>
+        <td><%= plant.recovered? %></td>
         <td><%= link_to 'Show', plant %></td>
         <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
       </tr>
