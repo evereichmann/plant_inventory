@@ -1,16 +1,5 @@
 class PlantNotesController < ApplicationController
-  before_action :set_plant_note, only: [:show, :edit, :update, :destroy]
-
-  # GET /plant_notes
-  # GET /plant_notes.json
-  def index
-    @plant_notes = PlantNote.all
-  end
-
-  # GET /plant_notes/1
-  # GET /plant_notes/1.json
-  def show
-  end
+  before_action :set_plant_note, only: [:edit, :update, :destroy]
 
   # GET /plant_notes/new
   def new

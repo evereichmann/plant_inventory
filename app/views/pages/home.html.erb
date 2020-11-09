@@ -1,7 +1,7 @@
 <div class="ui container">
 <h1>PLANTHAUS</h1>
 <div class="ui buttons">
-<%= button_to "login",{ :controller => "users", :action => "index" }, method: :get, class:"ui large blue button" %>
+<%= button_to "login", new_user_session_path , method: :get, class:"ui large blue button" %>
 <%= button_to "logout", destroy_user_session_path, method: :delete, class:"ui large button"  %>
 </div>
 </div>

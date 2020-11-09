@@ -4,5 +4,4 @@ class ApplicationController < ActionController::Base
         # pages_dashboard_path
         orders_path
     end
-
 end
