@@ -1,70 +1,76 @@
 <div class="ui container">
 <br/>
+<div class="ui segment">
 <div class="ui grid">
   <div class="six wide column">
+      <p>
+        <strong>Seller name:</strong>
+        <%= @order.seller_name %>
+      </p>
 
-<p>
-  <strong>Seller name:</strong>
-  <%= @order.seller_name %>
-</p>
+      <p>
+        <strong>Country origin:</strong>
+        <%= @order.country_origin %>
+      </p>
 
-<p>
-  <strong>Country origin:</strong>
-  <%= @order.country_origin %>
-</p>
+      <p>
+        <strong>Units:</strong>
+        <%= @order.units %>
+      </p>
 
-<p>
-  <strong>Units:</strong>
-  <%= @order.units %>
-</p>
+      <p>
+        <strong>Total price:</strong>
+        $<%= @order.total_price %>
+      </p>
 
-<p>
-  <strong>Total price:</strong>
-  $<%= @order.total_price %>
-</p>
+      <p>
+        <strong>Date order:</strong>
+        <%= @order.date_order.month %>/<%= @order.date_order.day %>/<%= @order.date_order.year %>
+      </p>
 
-<p>
-  <strong>Date order:</strong>
-  <%= @order.date_order.month %>/<%= @order.date_order.day %>/<%= @order.date_order.year %>
-</p>
+      <p>
+        <strong>Date shipped:</strong>
+        <%= @order.date_shipped == 0 ? "Not Shipped Yet" : @date%>
+      </p>
 
-<p>
-  <strong>Date shipped:</strong>
-  <%= @order.date_shipped == 0 ? "Not Shipped Yet" : @date%>
-</p>
-
-<p>
-  <strong>Multiple:</strong>
-  <%= @order.multiple %>
-</p>
-</div>
+      <p>
+        <strong>Multiple:</strong>
+        <%= @order.multiple %>
+      </p>
+  </div>
 
 <div class="ten wide column">
-  <strong>Note:</strong>
-  <% @order.order_notes.each do |note| %>
-  <p><%= note.information %></p>
-  <div class="ui breadcrumb">
-  <%= link_to 'Edit', edit_order_note_path(note), class:"section"%>
-  <div class="divider"> / </div>
-  <%= link_to 'X', order_note_path(note), class:"section", method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-  <% end %>
+    <strong>Notes:</strong>
+    <br/>
+    <br/>
+    <% @order.order_notes.each do |note| %>
+    <div class="ui breadcrumb">
+    <%= link_to 'Edit', edit_order_note_path(note), class:"section"%>
+    <div class="divider"> / </div>
+    <%= link_to 'X', order_note_path(note), class:"section", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="divider"> / </div>
+    <p class="section"><%= note.information %></p>
+    <br/>
+    <br/>
+    </div>
+    <% end %>
 </div>
 </div>
 <br/>
 <div class="ui breadcrumb">
-<%= link_to 'Edit', edit_order_path(@order), class:"section"%>
+<strong><%= link_to 'Edit', edit_order_path(@order), class:"section"%></strong>
 <div class="divider"> / </div>
-<%= link_to 'Back', orders_path, class:"section" %>
+<strong><%= link_to 'Back', orders_path, class:"section" %></strong>
 <div class="divider"> / </div>
-<%= link_to 'New Note', new_order_note_path %>
+<strong><%= link_to 'New Note', new_order_note_path %></strong>
 </div>
 <br>
+</div>
 <br>
 <div class="ui three column grid">
 <% @order.plants.each do |plant| %>
 <div class="column">
-<div class="ui card">
+<div class="ui fluid card">
 <div class="content">
 <p class="header"><%= link_to plant.name, plant_path(plant) %></p>
 <% if plant.avatar.attached? %>

@@ -17,6 +17,16 @@
 </div>
 
 <div class="ui bottom attached segment">
+
+<div>
+<p>total number of plants: <%= @plants.length %></p>
+<p>dead plants: <%= @plants.select{|plant| plant.condition == 'dead'}.length %></p>
+<p>total live plants: <%= @plants.select{|plant| plant.condition != 'dead'}.length %></p>
+<p>plants sold: <%= @plants.select{|plant| plant.sold == true }.length %></p>
+</div>
+
+<div>
+
 </div>
 
 

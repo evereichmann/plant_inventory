@@ -1,73 +1,95 @@
 <div class="ui container">
-
-<p>
-  <strong>Seller:</strong>
-  <%=  @plant.order.seller_name %>
-</p>
-
-<p>
-  <strong>Id:</strong>
-  <%= @plant.id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @plant.name %>
-</p>
-
-<p>
-  <strong>Unit price:</strong>
-  <%= @plant.unit_price %>
-</p>
-
-<p>
-  <strong>Arrival date:</strong>
-  <%= @plant.arrival_date.month %>/<%= @plant.arrival_date.day %>/<%= @plant.arrival_date.year %>
-</p>
-
-
-<p>
-  <strong>Days In Box:</strong>
-    <%= %"#{@plant.days_in_box} days" %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @plant.condition %>
-</p>
-
-<p>
-  <strong>Recovery date:</strong>
-  <%= @plant.recovered?%>
-</p>
-
-<% if @plant.sold == true %>
-<p>
-  <strong>Sold:</strong>
-  <%= @plant.sold %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @plant.price %>
-</p>
-<% else %>
-<% end %>
-
- <% if @plant.avatar.attached? %>
-   <%= image_tag @plant.avatar %>
-<% end %>
 <br/>
+<div class="ui segment">
+<div class="ui grid">
+  <div class="eight wide column">
+    <p>
+      <strong>Seller:</strong>
+      <%=  @plant.order.seller_name %>
+    </p>
 
+    <p>
+      <strong>Id:</strong>
+      <%= @plant.id %>
+    </p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @plant.name %>
+    </p>
+
+    <p>
+      <strong>Unit price:</strong>
+      <%= @plant.unit_price %>
+    </p>
+
+    <p>
+      <strong>Arrival date:</strong>
+      <%= @plant.arrival_date.month %>/<%= @plant.arrival_date.day %>/<%= @plant.arrival_date.year %>
+    </p>
+
+
+    <p>
+      <strong>Days In Box:</strong>
+        <%= %"#{@plant.days_in_box} days" %>
+    </p>
+
+    <p>
+      <strong>Condition:</strong>
+      <%= @plant.condition %>
+    </p>
+
+    <p>
+      <strong>Recovery date:</strong>
+      <%= @plant.recovered?%>
+    </p>
+
+    <% if @plant.sold == true %>
+    <p>
+      <strong>Sold:</strong>
+      <%= @plant.sold %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @plant.price %>
+    </p>
+    <% else %>
+    <% end %>
+</div>
+<div class="right floated right aligned eight wide column">
+    <% if @plant.avatar.attached? %>
+      <%= image_tag @plant.avatar %>
+    <% end %>
+</div>
+<br/>
+  <div class="ui breadcrumb">
+  <strong><%= link_to 'Edit', edit_plant_path(@plant), class:"section" %></strong>
+  <div class="divider"> / </div>
+  <strong><%= link_to 'Back', plants_path, class:"section" %></strong>
+  <div class="divider"> / </div>
+  <strong><%= link_to 'New Note', new_plant_note_path %></strong>
+  </div>
+</div>
+<br/>
+</div>
+</div>
+
+
+<br/>
+<div class="ui container">
 <% @plant.plant_notes.each do |note|%>
-<p><strong>Title:</strong> <%= note.title %></p>
-<p><strong>Date:</strong> <%= note.note_date %></p>
-<p><strong>Note:</strong> <%= note.text_field %></p>
+<div class="ui card">
+<div class="content">
+<p class="header"><%= note.title %></p>
 <% if note.plant_image.attached? %>
-   <%= image_tag note.plant_image %>
+   <%= image_tag note.plant_image, class: "image" %>
 <% end %>
+<p class="meta"><strong>Date: <%= note.note_date %></p>
+<p class="description"><strong>Note: <%= note.text_field %></p>
+</div>
+</div>
 <% end %>
 
-<%= link_to 'Edit', edit_plant_path(@plant) %> |
-<%= link_to 'Back', plants_path %>
+</div>
 </div>
