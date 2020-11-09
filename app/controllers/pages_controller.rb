@@ -3,5 +3,7 @@ class PagesController < ApplicationController
   end 
 
   def dashboard
+    @plants = Plant.all
+    @orders = Order.all 
   end  
 end
