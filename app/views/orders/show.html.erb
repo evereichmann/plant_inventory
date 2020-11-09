@@ -1,5 +1,8 @@
 <div class="ui container">
 <br/>
+<div class="ui grid">
+  <div class="six wide column">
+
 <p>
   <strong>Seller name:</strong>
   <%= @order.seller_name %>
@@ -34,20 +37,27 @@
   <strong>Multiple:</strong>
   <%= @order.multiple %>
 </p>
+</div>
 
-<strong>Note:</strong>
-<% @order.order_notes.each do |note| %>
-<p><%= note.information %></p>
-<p><%= link_to 'Edit Note', edit_order_note_path(note) %></p>
-<p><%= link_to 'Destroy', order_note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<% end %>
-
-<p><%= link_to 'Add Note', new_order_note_path %></p>
-
+<div class="ten wide column">
+  <strong>Note:</strong>
+  <% @order.order_notes.each do |note| %>
+  <p><%= note.information %></p>
+  <div class="ui breadcrumb">
+  <%= link_to 'Edit', edit_order_note_path(note), class:"section"%>
+  <div class="divider"> / </div>
+  <%= link_to 'X', order_note_path(note), class:"section", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <% end %>
+</div>
+</div>
+<br/>
 <div class="ui breadcrumb">
 <%= link_to 'Edit', edit_order_path(@order), class:"section"%>
 <div class="divider"> / </div>
 <%= link_to 'Back', orders_path, class:"section" %>
+<div class="divider"> / </div>
+<%= link_to 'New Note', new_order_note_path %>
 </div>
 <br>
 <br>
