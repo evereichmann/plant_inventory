@@ -62,7 +62,7 @@
 <div class="divider"> / </div>
 <strong><%= link_to 'Back', orders_path, class:"section" %></strong>
 <div class="divider"> / </div>
-<strong><%= link_to 'New Note', new_order_note_path %></strong>
+<strong><%= link_to 'New Note', new_order_note_path({:order_id => @order.id}) %></strong>
 </div>
 <br>
 </div>

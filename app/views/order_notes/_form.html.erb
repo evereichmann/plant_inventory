@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :order_id %>
-    <%= form.collection_select :order_id, @order , :id, :name_and_date %>
+    <%= form.select :order_id,  options_from_collection_for_select(@order, "id", "name_and_date", params[:order_id]) %>
   </div>
 
   <div class="actions">

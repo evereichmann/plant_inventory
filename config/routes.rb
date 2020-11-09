@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :orders
   resources :users, only: [:new, :create, :destroy, :edit]
-  resources :plant_notes, only: [:new, :create, :destroy, :edit]
-  resources :order_notes, only: [:new, :create, :destroy, :edit]
+  resources :plant_notes
+  resources :order_notes
   
   get 'pages/home'
   get 'pages/dashboard'

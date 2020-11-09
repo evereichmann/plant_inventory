@@ -70,7 +70,7 @@
   <div class="divider"> / </div>
   <strong><%= link_to 'Back', plants_path, class:"section" %></strong>
   <div class="divider"> / </div>
-  <strong><%= link_to 'New Note', new_plant_note_path %></strong>
+  <strong><%= link_to 'New Note', new_plant_note_path({:plant_id => @plant.id}) %></strong>
   </div>
 
 <%# ends grid layout %>
