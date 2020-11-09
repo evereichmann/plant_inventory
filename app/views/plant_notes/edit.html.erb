@@ -1,6 +1,7 @@
+<div class="ui container">
 <h1>Editing Plant Note</h1>
 
-<%= render 'form', plant_note: @plant_note %>
+<%= render 'edit_form', plant_note: @plant_note %>
 
-<%= link_to 'Show', @plant_note %> |
-<%= link_to 'Back', plant_notes_path %>
+<%= link_to 'Back', plant_path(@plant_note.plant_id) %>
+</div>

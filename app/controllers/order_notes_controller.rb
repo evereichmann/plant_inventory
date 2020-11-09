@@ -1,16 +1,6 @@
 class OrderNotesController < ApplicationController
-  before_action :set_order_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_note, only: [:edit, :update, :destroy]
 
-  # GET /order_notes
-  # GET /order_notes.json
-  def index
-    @order_notes = OrderNote.all
-  end
-
-  # GET /order_notes/1
-  # GET /order_notes/1.json
-  def show
-  end
 
   # GET /order_notes/new
   def new
