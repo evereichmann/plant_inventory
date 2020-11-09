@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Id:</strong>
+  <%= @plant.id %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @plant.name %>
 </p>
@@ -23,10 +28,7 @@
 
 <p>
   <strong>Days In Box:</strong>
-    <% a = Date.parse("#{@plant.order.date_shipped}") %>
-    <% b = Date.parse("#{@plant.arrival_date}") %>
-    <% c = b.mjd - a.mjd %>
-    <%= %"#{c} days" %>
+    <%= %"#{@plant.days_in_box} days" %>
 </p>
 
 <p>
@@ -56,6 +58,15 @@
    <%= image_tag @plant.avatar %>
 <% end %>
 <br/>
+
+<% @plant.plant_notes.each do |note|%>
+<p><strong>Title:</strong> <%= note.title %></p>
+<p><strong>Date:</strong> <%= note.note_date %></p>
+<p><strong>Note:</strong> <%= note.text_field %></p>
+<% if note.plant_image.attached? %>
+   <%= image_tag note.plant_image %>
+<% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>

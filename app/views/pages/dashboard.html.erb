@@ -1,9 +1,27 @@
 <div class="ui container">
-<h1>dashboard</h1>
-<div class="ui buttons">
+<div class="ui top attached tabular menu" >
+<div class="item">
+<h1><%= link_to 'Orders', orders_path, method: :get %></h1>
+</div>
+<div class="item">
+<h1><%= link_to 'Plants', plants_path, method: :get %></h1>
+</div>
+<div class="item active">
+<h1>Dashboard</h1>
+</div>
+<div class="right menu">
+    <div class="item">
 <%= button_to "logout", destroy_user_session_path, method: :delete, class:"ui big button"%>
-<%= button_to "orders", orders_path, method: :get, class:"ui big blue button" %>
-<%= button_to "plants", plants_path, method: :get, class:"ui big green button" %>
-<%= button_to "new order note", new_order_note_path , method: :get, class:"ui big yellow button" %>
 </div>
 </div>
+</div>
+
+<div class="ui bottom attached segment">
+</div>
+
+
+</div>
+
+
+
+

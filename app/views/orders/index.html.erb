@@ -1,7 +1,22 @@
 <div class="ui container">
-<p id="notice"><%= notice %></p>
+<div class="ui top attached tabular menu">
+<div class="item active">
 <h1>Orders</h1>
+</div>
+<div class="item">
+<h1><%= link_to 'Plants', plants_path, method: :get %></h1>
+</div>
+<div class="item">
+<h1 ><%= link_to 'Dashboard', pages_dashboard_path, method: :get %></h1>
+</div>
+<div class="right menu">
+    <div class="item">
+<%= button_to "logout", destroy_user_session_path, method: :delete, class:"ui big button"%>
+</div>
+</div>
+</div>
 
+<div class="ui bottom attached segment">
 <table class="ui celled table">
   <thead>
     <tr>
@@ -36,4 +51,5 @@
 
 <br>
 <%= link_to '<button type="button" class="ui button">New Order</button>'.html_safe, new_order_path %>
+</div>
 </div>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root to: "pages#home"
+  resources :plant_notes
   resources :order_notes
   resources :plants
-  root to: "pages#home"
   devise_for :users
   
   get 'pages/home'
