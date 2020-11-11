@@ -17,7 +17,7 @@
 </div>
 
 <div class="ui bottom attached segment">
-<table class="ui celled table">
+<table class="ui celled table mobile hidden">
   <thead>
     <tr>
       <th>Seller name</th>
@@ -41,9 +41,9 @@
         <td id="order"><%= order.date_order.month %>/<%= order.date_order.day %>/<%= order.date_order.year %></td>
         <td id="order"><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
         <td id="order"><%= order.multiple %></td>
-        <td id="order"><%= link_to 'Show', order %></td>
-        <td id="order"><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td id="order"><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
