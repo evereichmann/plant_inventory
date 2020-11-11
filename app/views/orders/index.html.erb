@@ -34,16 +34,16 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.seller_name %></td>
-        <td><%= order.country_origin %></td>
-        <td><%= order.units %></td>
-        <td>$<%= order.total_price %></td>
-        <td><%= order.date_order.month %>/<%= order.date_order.day %>/<%= order.date_order.year %></td>
-        <td><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
-        <td><%= order.multiple %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td id="order"><%= order.seller_name %></td>
+        <td id="order"><%= order.country_origin %></td>
+        <td id="order"><%= order.units %></td>
+        <td id="order">$<%= order.total_price %></td>
+        <td id="order"><%= order.date_order.month %>/<%= order.date_order.day %>/<%= order.date_order.year %></td>
+        <td id="order"><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
+        <td id="order"><%= order.multiple %></td>
+        <td id="order"><%= link_to 'Show', order %></td>
+        <td id="order"><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td id="order"><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

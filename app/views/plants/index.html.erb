@@ -36,15 +36,15 @@
     <% @plants.each do |plant| %>
       <% if plant.condition != "dead" && plant.sold != true %>
       <tr>
-        <td><%= plant.id %></td>
-        <td><%= plant.name %></td>
-        <td>$<%= plant.unit_price %></td>
-        <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
-        <td><%= plant.condition %></td>
-        <td><%= plant.recovered?  %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
-        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td id="plant"><%= plant.id %></td>
+        <td id="plant"><%= plant.name %></td>
+        <td id="plant">$<%= plant.unit_price %></td>
+        <td id="plant"><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
+        <td id="plant"><%= plant.condition %></td>
+        <td id="plant"><%= plant.recovered?  %></td>
+        <td id="plant"><%= link_to 'Show', plant %></td>
+        <td id="plant"><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td id="plant"><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
        <% else %>
        <% end %>
@@ -76,16 +76,16 @@
     <% @plants.each do |plant| %>
       <% if plant.sold == true %>
       <tr>
-        <td><%= plant.id %></td>
-        <td><%= plant.name %></td>
-        <td>$<%= plant.unit_price %></td>
-        <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
-        <td><%= plant.recovered? %></td>
-        <td>$<%= plant.price %></td>
+        <td id="plant"><%= plant.id %></td>
+        <td id="plant"><%= plant.name %></td>
+        <td id="plant">$<%= plant.unit_price %></td>
+        <td id="plant"><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
+        <td id="plant"><%= plant.recovered? %></td>
+        <td id="plant">$<%= plant.price %></td>
         <% money = plant.price - plant.unit_price %>
-        <td>$<%= money %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td id="plant">$<%= money %></td>
+        <td id="plant"><%= link_to 'Show', plant %></td>
+        <td id="plant"><%= link_to 'Edit', edit_plant_path(plant) %></td>
       </tr>
       <% else%>
       <% end %>
@@ -112,13 +112,13 @@
       <% if plant.condition == "dead" %>
       <p></p>
       <tr>
-        <td><%= plant.id %></td>
-        <td><%= plant.name %></td>
-        <td>$<%= plant.unit_price %></td>
-        <td><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
-        <td><%= plant.recovered? %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td id="plant"><%= plant.id %></td>
+        <td id="plant"><%= plant.name %></td>
+        <td id="plant">$<%= plant.unit_price %></td>
+        <td id="plant"><%= plant.arrival_date.month %>/<%= plant.arrival_date.day %>/<%= plant.arrival_date.year %></td>
+        <td id="plant"><%= plant.recovered? %></td>
+        <td id="plant"><%= link_to 'Show', plant %></td>
+        <td id="plant"><%= link_to 'Edit', edit_plant_path(plant) %></td>
       </tr>
       <% else%>
       <% end %>
