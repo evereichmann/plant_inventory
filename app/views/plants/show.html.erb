@@ -25,13 +25,21 @@
 
       <p>
         <strong>Arrival date:</strong>
+        <% if @plant.arrival_date != nil %>
         <%= @plant.arrival_date.month %>/<%= @plant.arrival_date.day %>/<%= @plant.arrival_date.year %>
+        <%else%>
+        <td id="plant">Not Recorded</td>
+        <%end%>
       </p>
 
 
       <p>
-        <strong>Days In Box:</strong>
+        <strong>Days In Box:</strong>\
+        <% if @plant.order.date_shipped == nil %>
           <%= %"#{@plant.days_in_box} days" %>
+        <%else%>
+          <td id="plant">Not Recorded</td>
+        <%end%>
       </p>
 
       <p>
@@ -41,7 +49,11 @@
 
       <p>
         <strong>Recovery date:</strong>
-        <%= @plant.recovered?%>
+        <% if @plant.arrival_date != nil %>
+          <%= @plant.recovered?%>
+        <%else%>
+          <td id="plant">Not Recorded</td>
+        <%end%>
       </p>
 
       <% if @plant.sold == true %>

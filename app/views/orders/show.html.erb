@@ -12,20 +12,28 @@
         <strong>Country origin:</strong>
         <%= @order.country_origin %>
       </p>
-
+      
+      <% if @order.units != nil %>
       <p>
         <strong>Units:</strong>
         <%= @order.units %>
       </p>
+      <% end %>
 
+    <% if @order.total_price != nil %>
       <p>
         <strong>Total price:</strong>
         $<%= @order.total_price %>
       </p>
+    <% end %>
 
       <p>
         <strong>Date order:</strong>
+        <% if @order.date_order != nil %>
         <%= @order.date_order.month %>/<%= @order.date_order.day %>/<%= @order.date_order.year %>
+        <% else %>
+        Not Recorded
+        <% end %>
       </p>
 
       <p>
@@ -79,7 +87,9 @@
 <br/>
 <p>id:<%= plant.id%></p>
 <p>condition: <%= plant.condition%></p>
+<% if @order.date_order != nil %>
 <p>recovered? <%= plant.recovered? %></p>
+<% end %>
 <p>sold? <%= plant.sold %></p>
 </div>
 </div>
