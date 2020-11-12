@@ -7,7 +7,7 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 gem 'devise'
 
-gem 'rubocop'
+# gem 'rubocop'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
