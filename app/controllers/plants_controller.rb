@@ -10,7 +10,7 @@ class PlantsController < ApplicationController
   # GET /plants/1
   # GET /plants/1.json
   def show
-    @date = "#{@plant.recovery_date.month}/#{@plant.recovery_date.day}/#{@plant.recovery_date.year}"
+    
   end
 
   # GET /plants/new

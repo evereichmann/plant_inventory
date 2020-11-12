@@ -6,7 +6,7 @@ class CreatePlants < ActiveRecord::Migration[6.0]
       t.integer :unit_price
       t.date :arrival_date
       t.string :condition
-      t.date :recovery_date, default: 0000-00-00
+      t.date :recovery_date
       t.boolean :sold
       t.integer :price
 

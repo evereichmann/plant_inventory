@@ -34,8 +34,8 @@
 
 
       <p>
-        <strong>Days In Box:</strong>\
-        <% if @plant.order.date_shipped == nil %>
+        <strong>Days In Box:</strong>
+        <% if @plant.order.date_shipped != nil %>
           <%= %"#{@plant.days_in_box} days" %>
         <%else%>
           <td id="plant">Not Recorded</td>
@@ -50,7 +50,7 @@
       <p>
         <strong>Recovery date:</strong>
         <% if @plant.arrival_date != nil %>
-          <%= @plant.recovered?%>
+          <%= @plant.recovered? %>
         <%else%>
           <td id="plant">Not Recorded</td>
         <%end%>

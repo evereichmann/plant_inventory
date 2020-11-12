@@ -6,7 +6,9 @@ class Plant < ApplicationRecord
   def recovered?
   date = self.arrival_date
   rec_date = self.recovery_date
-        if date > rec_date
+        if rec_date == nil
+          "Not Recovered"
+        elsif date > rec_date
           "Not Recovered"
         else
           a = Date.parse("#{date}")
