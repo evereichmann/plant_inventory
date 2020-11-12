@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.integer :units
       t.integer :total_price
       t.date :date_order
-      t.date :date_shipped, default: 0000-00-00
+      t.date :date_shipped
       t.boolean :multiple
 
       t.timestamps

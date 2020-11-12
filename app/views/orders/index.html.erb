@@ -47,7 +47,7 @@
         <%else%>
         <td id="order">Not Recorded</td>
         <%end%>
-        <td id="order"><%= order.date_shipped == 0 ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
+        <td id="order"><%= order.date_shipped == nil ? "NSY" : "#{order.date_shipped.month}/#{order.date_shipped.day}/#{order.date_shipped.year}" %></td>
         <td id="order"><%= order.multiple %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

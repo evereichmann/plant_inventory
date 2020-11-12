@@ -38,9 +38,12 @@
 
       <p>
         <strong>Date shipped:</strong>
-        <%= @order.date_shipped == 0 ? "Not Shipped Yet" : @date%>
+    <% if @order.date_shipped != nil %>
+        <%= "#{@order.date_shipped.month}/#{@order.date_shipped.day}/#{@order.date_shipped.year}" %> 
+        <%else%>
+        Not Shipped Yet 
       </p>
-
+    <% end %>
       <p>
         <strong>Multiple:</strong>
         <%= @order.multiple %>
